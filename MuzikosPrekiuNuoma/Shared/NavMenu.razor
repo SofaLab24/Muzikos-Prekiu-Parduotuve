@@ -1,0 +1,62 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">MuzikosPrekiuNuoma</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Pagrindinis
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="registracija">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Registracija
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="sutarciu_valdymas">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Sutarciu valdymas
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="prekiu_valdymas">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Prekiu valdymas
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="prisijungimo_forma">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Prisijungimo forma
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="paskyru_sarasas">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Paskyru sarasas
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="prekiu_sarasas">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Prekiu sarasas
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="paskyros_valdymas">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Paskyros valdymas
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
